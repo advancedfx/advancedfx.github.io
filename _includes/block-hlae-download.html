@@ -1,5 +1,5 @@
 <p style="border:1px dotted #609060;background-color:#C0F0C0;">Current release, compatible with latest Steam version:<br />
-<a href="https://github.com/ripieces/advancedfx/releases/latest"><span style="font-size: larger;"><strong>HLAE 2.6.1.0</strong></span> (2015-08-13T15:19Z)</a> (<a href="https://github.com/ripieces/advancedfx/releases">old versions</a>) (<a href="http://advancedfx.org/files/logo2009.svg">logo</a>)</p>
+<a href="https://github.com/ripieces/advancedfx/releases/latest"><span style="font-size: larger;"><strong>HLAE 2.6.2.1 </strong></span> (2015-08-15T07:57Z)</a> (<a href="https://github.com/ripieces/advancedfx/releases">old versions</a>) (<a href="http://advancedfx.org/files/logo2009.svg">logo</a>)</p>
 
 <p style="border:1px dotted #808080;background-color:#E0E0E0;">Release compatible with Steam version from July 2009 (unsupported):<br />
 <a href="https://github.com/ripieces/advancedfx/releases/tag/v2.2.21.14"><span style="font-size: larger;"><strong>HLAE 2.2.21.14</strong></span> (2013-02-09T14:16Z)</a></p>
@@ -29,103 +29,10 @@
 
 <div style="border: 1px solid black; padding: 4px">
 <p><tt>
-HLAE 2.6.1.0 (2015-08-13T15:19Z)</br />
-</br />
-U Included AfxHookSource 0.2.1.0 (2015-08-13T15:17Z). </br />
-</br />
-</br />
-AfxHookSource 0.2.1.0 (2015-08-13T15:17Z)</br />
-</br />
-* Added mirv_campath draw support for CS:S (Counter-Strike Source) and similar Source SDK 2013 based games. Please let us know if it works in your mod too :-)</br />
-</br />
-We noticed during mirv_campath draw development, that data exported by mirv_camexport might be off (not accurate enough). If you used the data in a 3D program and can check whether or not there is a problem when syncing it to game footage, please let us know! </br />
-</br />
-</tt></p>
-<p><tt>
-HLAE 2.6.0.3 (2015-08-13T06:36Z)</br />
-</br />
-U Included AfxHookSource 0.2.0.3 (2015-08-13T06:34Z). </br />
-</br />
-</br />
-AfxHookSource 0.2.0.3 (2015-08-13T06:34Z)</br />
-</br />
-+ Fixed LU decomposition finally, might affect very rare cases of mirv_campath draw drawing. </br />
-</br />
-</tt></p>
-<p><tt>
-HLAE 2.6.0.2 (2015-08-12T10:22Z)<br />
-<br />
-U Included AfxHookSource 0.2.0.2 (2015-08-12T10:20Z). <br />
-<br />
-<br />
-AfxHookSource 0.2.0.2 (2015-08-12T10:20Z)<br />
-<br />
-+ Bug in LU-decomposition pivotisation fixed causing bugs in line clipping. Other minor fixes. <br />
-<br />
-</tt></p>
-<p><tt>
-HLAE 2.6.0.1 (2015-08-11T15:15Z)<br />
-<br />
-U Included AfxHookSource 0.2.0.1 (2015-08-11T17:31Z). <br />
-<br />
-<br />
-AfxHookSource 0.2.0.1 (2015-08-11T17:31Z)<br />
-<br />
-+ Bug fixes mostly related to drawing.<br />
-<br />
-</tt></p>
-<p><tt>
-HLAE 2.6.0.0 (2015-08-11T15:15Z)<br />
-<br />
-U Included AfxHookSource 0.2.0.0 (2015-08-11T15:12Z). <br />
-<br />
-<br />
-AfxHookSource 0.2.0.0 (2015-08-11T15:12Z)<br />
-<br />
-* Added mirv_campath draw. This _might_ work in other modifications than CS:GO too.<br />
-<br />
-* Added mirv_campath select. <br />
-<br />
-</tt></p>
-<p><tt>
-HLAE 2.5.0.0 (2015-07-27T09:10Z)<br />
-<br />
-U Included AfxHookGoldSrc 2.4.7.1 (2015-07-26T18:10Z).<br />
-<br />
-U Included AfxHookSource 0.1.0.0 (2015-07-27T09:07Z). <br />
-<br />
-<br />
-AfxHookGoldSrc 2.4.7.1 (2015-07-26T18:10Z)<br />
-<br />
-+ Fixed crosshair fix when previewing (aka not recording) not using the correct host_frametime. <br />
-<br />
-<br />
-AfxHookSource 0.1.0.0 (2015-07-27T09:07Z)<br />
-<br />
-* Added <a href="https://github.com/ripieces/advancedfx/wiki/Source%3Amirv_streams">mirv_streams</a> officially (renamed from __mirv_streams). The system still has it's limitations, but is now in a state where it makes sense to offer it to more users. A few examples for this command will be added to the HLAE Manual hopefully. <br />
-<br />
-</tt></p>
-<p><tt>
-HLAE 2.4.10.0 (2015-07-24T17:30Z)<br />
-<br />
-U Included AfxHookSource 0.0.13.7 (2015-07-24T17:30Z). <br />
-<br />
-<br />
-AfxHookSource 0.0.13.7 (2015-07-24T17:30Z)<br />
-<br />
-+ Fixed crashes due to class pointer not being offset according to used interface in case of multiple inheritance in CAfxMesh (IMesh wrapper). Thanks to the great and mighty anthony for providing a demo with the problem. <br />
-<br />
-</tt></p>
-<p><tt>
-HLAE 2.4.9.0 (2015-07-23T16:00Z)<br />
-<br />
-+ Fixed 64 bit versions of msvcp100.dll, msvcr100.dll being packaged instead of 32 bit versions.<br />
-<br />
-U Updated launcher for GoldSrc games (AfxHookGoldSrc) to display a warning icon and information if game resolution height is bellow 480 pixels, since then the Half-Life's TrackerScheme.res would need to be adjusted aka an EngineFont for bellow 480 pixels would need to be added, otherwise text (i.e. death notice text) will be missing in-game. <br />
-<br />
+Newer changelog entries are replicated on the <a href="https://github.com/ripieces/advancedfx/releases">releases page here</a>.
 </tt></p>
 </div>
 
-<p>Further changelog entries can be found in the changelogs included download.</p>
+<p>Further changelog entries can be found in the changelog XML files included in the download.</p>
 
 <p><u>Author:</u> <a href="https://github.com/ripieces/advancedfx/blob/master/resources/readme.txt">HLAE Team</a></p>
