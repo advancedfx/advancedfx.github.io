@@ -22,7 +22,7 @@
 }
 
 .afx_content {
-	padding-bottom:2em;
+	flex: 1;
 }
 
 .afx_footer {
@@ -31,11 +31,6 @@
 	padding-top:0.5em;
 	padding-bottom:0.5em;
 	text-align:center;
-	width:100%;
-	height:1em;
-	position:absolute;
-	bottom:0;
-	left:0;
 }
 
 html {
@@ -53,6 +48,8 @@ body {
 #wrapper {
 	min-height:100%;
 	position:relative;
+	display: flex;
+	flex-direction: column;
 }
 
 a:link { color:blue; text-decoration:underline; }
