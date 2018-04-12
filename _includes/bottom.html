@@ -1,7 +1,17 @@
+		</main>
+		
+		<footer class="footer bg-light border-top mt-auto">
+			<div class="container-fluid text-center">
+				<div class="row">
+					<div class="col-md-12 py-3">
+						<a href="/contact/" class="{% if page.url contains '/contact/' %}font-weight-bold{% endif %}">Contact{% if page.url contains '/contact/' %} <span class="sr-only">(current)</span>{% endif %}</a>
+					</div>
+				</div>
 			</div>
-			<div class="afx_footer">
-				<a href="/contact/" class="{% if page.url contains '/contact/' %}afx_current_page{% endif %}">Contact</a>
-			</div>
-		</div>
+		</footer>
+		
+		<script src="/js/jquery-3.3.1.slim.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -1,6 +1,12 @@
-<div class="box">
-	<div class="box_header"><a name="{{include.block-id}}">{{include.block-title}}</a></div>
-	<div class="box_content">
+<div class="container border my-3">
+	<div class="row bg-light">
+		<div class="col-md-12 py-3 font-weight-bold">
+			<a name="{{include.block-id}}">{{include.block-title}}</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 py-3">
 {% include {{include.block-file}} %}
+		</div>
 	</div>
 </div>

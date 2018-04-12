@@ -1,21 +1,44 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
-	<head>
-		<meta charset="UTF-8">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>{{ page.title }} - advancedfx.org</title>
-		<link rel="stylesheet" type="text/css" href="/css/afx.css">
+		
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/afx.css">
 	</head>
-	<body>
-		<div id="wrapper">
-			<div class="afx_header">
-				<a href="/"><img src="/files/hlae_64x64.png" alt="advancedfx.org"></a>
-				<a href="/" class="{% if page.overview %}afx_current_page{% endif %}">Home</a>
-				&nbsp;|&nbsp; <a href="/download/" class="{% if page.url contains '/download/' %}afx_current_page{% endif %}">Download</a>
-				&nbsp;|&nbsp; <a href="https://github.com/advancedfx/advancedfx/wiki">Manual</a>
-				&nbsp;|&nbsp; <a href="/support/" class="{% if page.url contains '/support/' %}afx_current_page{% endif %}">Support</a>
-				&nbsp;|&nbsp; <a href="/media/" class="{% if page.url contains '/media/' %}afx_current_page{% endif %}">Media</a>
+	<body class="cover-container d-flex flex-column h-100">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="/files/hlae_64x64.png" alt="HLAE Logo" width="24" height="24" border="0">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsDefault">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item{% if page.overview %} active{% endif %}">
+						<a class="nav-link" href="/">Home{% if page.overview %} <span class="sr-only">(current)</span>{% endif %}</a>
+					  </li>
+					  <li class="nav-item{% if page.url contains '/download/' %} active{% endif %}">
+						<a class="nav-link" href="/download/">Download{% if page.url contains '/download/' %} <span class="sr-only">(current)</span>{% endif %}</a>
+					  </li>
+					  <li class="nav-item{% if page.url contains '/manual/' %} active{% endif %}">
+						<a class="nav-link" href="https://github.com/advancedfx/advancedfx/wiki">Manual{% if page.url contains '/manual/' %} <span class="sr-only">(current)</span>{% endif %}</a>
+					  </li>
+					  <li class="nav-item{% if page.url contains '/support/' %} active{% endif %}">
+						<a class="nav-link" href="/support/">Support{% if page.url contains '/support/' %} <span class="sr-only">(current)</span>{% endif %}</a>
+					  </li>
+					  <li class="nav-item{% if page.url contains '/media/' %} active{% endif %}">
+						<a class="nav-link" href="/media/">Media{% if page.url contains '/media/' %} <span class="sr-only">(current)</span>{% endif %}</a>
+					  </li>
+					</ul>
+				</div>
 			</div>
-			<div class="afx_content">
+		</nav>
+		
+		<main role="main">

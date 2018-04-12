@@ -1,15 +1,19 @@
 {% assign blocks = include.blocks | split: ',' %}
-<div class="box">
-	<div class="box_header">On this page:</div>
-	<div class="box_content">
-		<ul>
+<div class="container border my-3">
+	<div class="row bg-light">
+		<div class="col-md-12 py-3 font-weight-bold">On this page:</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 py-3">
+			<ul>
 {% for block in blocks %}
 {% assign block-data = block | split: '/' %}
 {% assign block-id = block-data[0] %}
 {% assign block-title = block-data[1] %}
-			<li><a href="#{{block-id}}">{{block-title}}</a></li>
+				<li><a href="#{{block-id}}">{{block-title}}</a></li>
 
 {% endfor %}
-		</ul>
+			</ul>
+		</div>
 	</div>
 </div>
