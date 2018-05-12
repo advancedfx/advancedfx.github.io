@@ -1,9 +1,11 @@
 <div class="container border my-3">
-	<div class="row bg-light">
-		<div class="col-md-12 py-3 font-weight-bold">
-			<a name="{{include.block-id}}">{{include.block-title}}</a>
+	{% if include.block-title != nil %}
+		<div class="row bg-light">
+			<div class="col-md-12 py-3">
+				<h2 class="font-weight-bold my-0"><a name="{{include.block-id}}">{{include.block-title}}</a></h2>
+			</div>
 		</div>
-	</div>
+	{% endif %}
 	<div class="row">
 		<div class="col-md-12 py-3">
 {% include {{include.block-file}} %}
