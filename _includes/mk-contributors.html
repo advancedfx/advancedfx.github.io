@@ -28,8 +28,14 @@ Contributions: <ul class="contribution_list">
 </ul>
 </div>
 
-{% if contributor.home != nil %}
-<p>Home: <a href="{{ contributor.home | uri_escape }}">{{ contributor.home | xml_escape }}</a></p>
+{% if contributor.links != nil %}
+<p>
+	Links:
+	{% assign links = contributor.links | split: ", " %}
+	{% for link in links %}
+	{% include mk-link.html url=link %}
+	{% endfor %}
+</p>
 {% endif %}
 {% if contributor.donations != nil %}
 <p>Donations:
