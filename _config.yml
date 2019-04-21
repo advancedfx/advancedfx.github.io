@@ -1,0 +1,4 @@
+afx_sub: "main"
+collections:
+  - contribution_types
+  - contributors

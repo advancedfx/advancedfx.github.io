@@ -7,3 +7,23 @@ html {
 body {
 	min-height: 100%;
 }
+
+h2 {
+	background-color: #f8f9fa;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: -1rem -1rem 1rem -1rem;
+}
+
+/* Contribution list: */
+
+.contribution_list {
+  display: inline-block;
+  padding: 0;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.contribution_list li {
+  display: inline-block;
+  cursor: help;
+}

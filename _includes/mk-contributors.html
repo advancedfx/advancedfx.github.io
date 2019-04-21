@@ -1,0 +1,45 @@
+{% assign contributors = site.contributors %}
+{% assign contributors = contributors | sort: "date_from", "last" | sort: "date_to", "first" | sort: "member", "last" %}   
+{% for contributor in contributors %}
+{% assign is_member = contributor.member | default: false %}
+{% if is_member == include.member %}
+<h3 id="contrib_{{ contributor.slug }}">
+<b>{{ contributor.name | xml_escape }}</b>
+</h3>
+
+<p>
+{{ contributor.date_from | date: "%B %Y" | xml_escape }}
+{% if contributor.date_to != nil %}
+  - {{ contributor.date_to | date: "%B %Y" | xml_escape }}
+{% endif %}
+</p>
+
+<div>
+Contributions: <ul class="contribution_list">
+{% assign contributions = contributor.contributions | split: ", " %}
+{% for contribution in contributions %}
+	{% assign contribution_type = site.contribution_types | where: "slug", contribution | first %}
+	{% if contribution_type != nil %}
+		<li title="{{ contribution_type.represents | escape }}">{{ contribution_type.emoji | xml_escape }}</li>
+	{% else %}
+		<li>{{ contribution | xml_escape }}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+</div>
+
+{% if contributor.home != nil %}
+<p>Home: <a href="{{ contributor.home | uri_escape }}">{{ contributor.home | xml_escape }}</a></p>
+{% endif %}
+{% if contributor.donations != nil %}
+<p>Donations:
+   <ul>
+     {% for donation in contributor.donations %}
+       <li><a href="{{ donation | uri_escape }}">{{ donation | xml_escape }}</a></li>
+    {% endfor %}
+   </ul>
+</p>
+{% endif %}
+{{ contributor.content | markdownify }}
+{% endif %}
+{% endfor %}
