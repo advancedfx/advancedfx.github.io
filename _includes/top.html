@@ -27,9 +27,11 @@
 					  <li class="nav-item{% if page.url contains '/download/' %} active{% endif %}">
 						<a class="nav-link" href="/download/">Download{% if page.url contains '/download/' %}<span class="sr-only"> (current)</span>{% endif %}</a>
 					  </li>
+					  {% if site.afx_sub == "doc" %} 
 					  <li class="nav-item{% if site.afx_sub == "doc" %} active{% endif %}">
 						<a class="nav-link" href="/doc/">Documentation{% if site.afx_sub == "do" %}<span class="sr-only"> (current)</span>{% endif %}</a>
 					  </li>
+					  {% endif %}
 					  <li class="nav-item{% if page.url contains '/support/' %} active{% endif %}">
 						<a class="nav-link" href="/support/">Support{% if page.url contains '/support/' %}<span class="sr-only"> (current)</span>{% endif %}</a>
 					  </li>
