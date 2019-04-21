@@ -20,4 +20,14 @@ afx_sections: [["team","Team"],["contributors","Contributors"],["credits","Credi
 
 <h2>Credits</h2>
 
-For further credits (e.g. software / licenses used) please <a href="https://github.com/advancedfx/advancedfx/blob/master/resources/readme.txt">see the official readme.txt</a>
+<p>In addition to the mentions in the changelog we want to credit the following people, companies, organizations and projects:</p>
+
+{% for credit in site.credits %}
+
+<h3 id="credit_{{ credit.slug | escape }}">{{ credit.title | xml_escape }}</h3>
+
+{{ credit.content }}
+
+{% endfor %}
+
+<h3 id="other_credit">And everyone that feels he/she/it should have been mentioned here.</h3>
