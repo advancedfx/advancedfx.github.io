@@ -2,8 +2,10 @@
 {% assign contributors = contributors | sort: "date_from", "last" | sort: "date_to", "first" | sort: "member", "last" %}   
 {% for contributor in contributors %}
 <div class="contributor">
+
 {% assign is_member = contributor.member | default: false %}
 {% if is_member == include.member %}
+
 <h3 id="contrib_{{ contributor.slug }}">
 <b>{{ contributor.name | xml_escape }}</b>
 </h3>
@@ -40,6 +42,7 @@
 {{ contributor.content | markdownify }}
 </div>
 
-</div>
 {% endif %}
+
+</div>
 {% endfor %}
