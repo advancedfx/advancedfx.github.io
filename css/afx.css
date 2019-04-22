@@ -16,14 +16,49 @@ h2 {
 
 /* Contribution list: */
 
-.contribution_list {
-  display: inline-block;
+.contributor .links,
+.contributor .contributions {
+  display: block;
   padding: 0;
   list-style: none;
-  font-size: 2rem;
 }
 
-.contribution_list li {
+.contributor .links li,
+.contributor .contributions li {
   display: inline-block;
-  cursor: help;
+  margin: 0.25rem;
+}
+
+.contributor .links li:first-child,
+.contributor .contributions li:first-child {
+  margin-left: 0;
+}
+
+.contributor .links li:last-child,
+.contributor .contributions li:last-child {
+  margin-right: 0;
+}
+  
+.contributor .contributions li .icon {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.contributor .links a {
+  border: 1px solid #007bff;
+  padding: 0.25rem;
+  border-radius: 3px;
+  background: #f0f8ff;
+}
+.contributor .links a:hover {
+  border-color: #0056b3;
+  text-decoration: none;
+  background: #e0e8f0;
+}
+
+.contributor .contributions li {
+  border: 1px solid #808080;
+  padding: 0.25rem;
+  border-radius: 3px;
+  background: #f8f8f8;
 }

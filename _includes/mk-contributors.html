@@ -1,51 +1,45 @@
 {% assign contributors = site.contributors %}
 {% assign contributors = contributors | sort: "date_from", "last" | sort: "date_to", "first" | sort: "member", "last" %}   
 {% for contributor in contributors %}
+<div class="contributor">
 {% assign is_member = contributor.member | default: false %}
 {% if is_member == include.member %}
 <h3 id="contrib_{{ contributor.slug }}">
 <b>{{ contributor.name | xml_escape }}</b>
 </h3>
 
-<p>
+<div class="mb-1">
 {{ contributor.date_from | date: "%B %Y" | xml_escape }}
 {% if contributor.date_to != nil %}
   - {{ contributor.date_to | date: "%B %Y" | xml_escape }}
 {% endif %}
-</p>
+</div>
 
-<div>
-Contributions: <ul class="contribution_list">
+{% if contributor.links != nil %}
+<ul class="links mb-1">
+	{% assign links = contributor.links | split: ", " %}
+	{% for link in links %}
+		<li>{% include mk-link.html url=link %}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+<ul class="contributions mb-1">
 {% assign contributions = contributor.contributions | split: ", " %}
 {% for contribution in contributions %}
 	{% assign contribution_type = site.contribution_types | where: "slug", contribution | first %}
 	{% if contribution_type != nil %}
-		<li title="{{ contribution_type.represents | escape }}">{{ contribution_type.emoji | xml_escape }}</li>
+		<li><span class="icon">{{ contribution_type.emoji | xml_escape }}</span> {{ contribution_type.represents | xml_escape }}</li>
 	{% else %}
 		<li>{{ contribution | xml_escape }}</li>
 	{% endif %}
 {% endfor %}
 </ul>
+
+<div class="content">
+{{ contributor.content | markdownify }}
 </div>
 
-{% if contributor.links != nil %}
-<p>
-	Links:
-	{% assign links = contributor.links | split: ", " %}
-	{% for link in links %}
-	{% include mk-link.html url=link %}
-	{% endfor %}
-</p>
-{% endif %}
-{% if contributor.donations != nil %}
-<p>Donations:
-   <ul>
-     {% for donation in contributor.donations %}
-       <li><a href="{{ donation | uri_escape }}">{{ donation | xml_escape }}</a></li>
-    {% endfor %}
-   </ul>
-</p>
-{% endif %}
-{{ contributor.content | markdownify }}
+</div>
 {% endif %}
 {% endfor %}
