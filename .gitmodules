@@ -1,4 +1,4 @@
 [submodule "_contributors"]
 	path = _contributors
 	url = https://github.com/advancedfx/contrib.git
-	branch = master
+	branch = main
