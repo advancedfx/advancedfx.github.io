@@ -1,5 +1,5 @@
 {% assign contributors = site.contributors %}
-{% assign contributors = contributors | sort: "date_from", "last" | sort: "date_to", "first" | sort: "member", "last" %}   
+{% assign contributors = contributors | sort: "member", "last" | sort: "date_to", "first" | sort: "date_from", "last" %}   
 {% for contributor in contributors %}
 {% assign is_member = contributor.member | default: false %}
 {% if is_member == include.member %}
