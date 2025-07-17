@@ -1,9 +1,0 @@
-{% assign url = include.url | split: "/" %}
-{% assign prefix = url[0] | append: "//" | append: url[2] | append: "/" %}
-{% assign domain = site.domains | where: "prefix", prefix | first %}
-{% if domain != nil %}
-<a href="{{ include.url  | url_escpae }}" title="{{domain.title | escape }}"><img src="{{domain.icon | url_escape}}" alt="{{ domain.prefix | escape }}" width="24" height="24"> {{ include.url | remove_first: prefix }}</a>
-{% else %}
-<a href="{{ include.url  | url_escpae }}">{{ include.url  | xml_escape }}</a>
-{% endif %}
-{{ domain }}

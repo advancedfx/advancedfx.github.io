@@ -1,4 +1,0 @@
----
-emoji: "📆"
-represents: "Project Management"
----

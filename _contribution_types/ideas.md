@@ -1,4 +1,0 @@
----
-emoji: "🤔"
-represents: "Ideas & Planning"
----
